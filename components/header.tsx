@@ -1,10 +1,12 @@
-"use client"
+"use client";
 
-import React from "react"
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Guitar, Menu, X } from "lucide-react";
+import { ThemeToggle } from './ThemeToggle';  // Asegúrate de importar el componente
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -13,57 +15,91 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
-import { cn } from "@/lib/utils"
-import { Guitar, Menu, X } from "lucide-react"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { usePathname } from "next/navigation"
-import { useMobile } from "@/hooks/use-mobile"
+} from "@/components/ui/navigation-menu";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
+import { useMobile } from "@/hooks/use-mobile";
+import { useTheme } from "next-themes";
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const pathname = usePathname()
-  const isMobile = useMobile()
+  const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const isMobile = useMobile();
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true)
-      } else {
-        setIsScrolled(false)
-      }
-    }
+      setIsScrolled(window.scrollY > 10);
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const guitarasItems = [
-    { title: "Fenix", href: "/guitarras/fenix", description: "Nuestra línea insignia de guitarras" },
-    { title: "Det Guitar", href: "/guitarras/det-guitar", description: "Precisión y versatilidad" },
-    { title: "Valkiria", href: "/guitarras/valkiria", description: "Potencia y elegancia" },
-    { title: "Divell", href: "/guitarras/divell", description: "Diseño agresivo y sonido contundente" },
-    { title: "Custom", href: "/guitarras/custom", description: "Diseña tu guitarra personalizada" },
-  ]
+    {
+      title: "Fenix",
+      href: "/guitarras/fenix",
+      description: "Nuestra línea insignia de guitarras",
+    },
+    {
+      title: "Det Guitar",
+      href: "/guitarras/det-guitar",
+      description: "Precisión y versatilidad",
+    },
+    {
+      title: "Valkiria",
+      href: "/guitarras/valkiria",
+      description: "Potencia y elegancia",
+    },
+    {
+      title: "Divell",
+      href: "/guitarras/divell",
+      description: "Diseño agresivo y sonido contundente",
+    },
+    {
+      title: "Custom",
+      href: "/guitarras/custom",
+      description: "Diseña tu guitarra personalizada",
+    },
+  ];
 
   const bajosItems = [
-    { title: "JDA", href: "/bajos/jda", description: "Bajos de alta precisión" },
-    { title: "Explosion", href: "/bajos/explosion", description: "Potencia y definición" },
-    { title: "Stinker", href: "/bajos/stinker", description: "Versatilidad y confort" },
-    { title: "Custom", href: "/bajos/custom", description: "Diseña tu bajo personalizado" },
-  ]
+    {
+      title: "JDA",
+      href: "/bajos/jda",
+      description: "Bajos de alta precisión",
+    },
+    {
+      title: "Explosion",
+      href: "/bajos/explosion",
+      description: "Potencia y definición",
+    },
+    {
+      title: "Stinker",
+      href: "/bajos/stinker",
+      description: "Versatilidad y confort",
+    },
+    {
+      title: "Custom",
+      href: "/bajos/custom",
+      description: "Diseña tu bajo personalizado",
+    },
+  ];
 
   return (
     <header
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-200",
-        isScrolled ? "bg-background/95 backdrop-blur-md shadow-sm" : "bg-transparent",
+        isScrolled
+          ? "bg-background/95 backdrop-blur-md shadow-sm"
+          : "bg-transparent"
       )}
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center space-x-2">
-          <Guitar className="h-6 w-6" />
-          <span className="font-bold text-xl">GuitarBrand</span>
+          
+          <span className="font-bold text-xl">CG</span>
         </Link>
 
         {isMobile ? (
@@ -74,13 +110,13 @@ export default function Header() {
                 <span className="sr-only">Abrir menú</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <nav className="flex flex-col gap-4 mt-8">
+            <SheetContent side="right" className="w-[300px] sm:w-[400px] p-6">
+              <nav className="flex flex-col gap-4 mt-4">
                 <Link
                   href="/"
                   className={cn(
                     "px-4 py-2 text-lg font-medium rounded-md hover:bg-muted",
-                    pathname === "/" && "bg-muted",
+                    pathname === "/" && "bg-muted"
                   )}
                 >
                   Inicio
@@ -91,7 +127,7 @@ export default function Header() {
                   href="/artistas"
                   className={cn(
                     "px-4 py-2 text-lg font-medium rounded-md hover:bg-muted",
-                    pathname === "/artistas" && "bg-muted",
+                    pathname === "/artistas" && "bg-muted"
                   )}
                 >
                   Artistas
@@ -100,7 +136,7 @@ export default function Header() {
                   href="/nosotros"
                   className={cn(
                     "px-4 py-2 text-lg font-medium rounded-md hover:bg-muted",
-                    pathname === "/nosotros" && "bg-muted",
+                    pathname === "/nosotros" && "bg-muted"
                   )}
                 >
                   Nosotros
@@ -109,63 +145,88 @@ export default function Header() {
                   href="/contacto"
                   className={cn(
                     "px-4 py-2 text-lg font-medium rounded-md hover:bg-muted",
-                    pathname === "/contacto" && "bg-muted",
+                    pathname === "/contacto" && "bg-muted"
                   )}
                 >
                   Contacto
                 </Link>
               </nav>
+
+              <div className="mt-8 flex gap-4">
+                {/* Aquí implementamos el ThemeToggle */}
+                <ThemeToggle />
+              </div>
             </SheetContent>
           </Sheet>
         ) : (
-          <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>Guitarras</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                    {guitarasItems.map((item) => (
-                      <ListItem key={item.title} title={item.title} href={item.href}>
-                        {item.description}
-                      </ListItem>
-                    ))}
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>Bajos</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                    {bajosItems.map((item) => (
-                      <ListItem key={item.title} title={item.title} href={item.href}>
-                        {item.description}
-                      </ListItem>
-                    ))}
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="/artistas" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>Artistas</NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="/nosotros" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>Nosotros</NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
-        )}
+          <>
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Guitarras</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                      {guitarasItems.map((item) => (
+                        <ListItem
+                          key={item.title}
+                          title={item.title}
+                          href={item.href}
+                        >
+                          {item.description}
+                        </ListItem>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Bajos</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                      {bajosItems.map((item) => (
+                        <ListItem
+                          key={item.title}
+                          title={item.title}
+                          href={item.href}
+                        >
+                          {item.description}
+                        </ListItem>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/artistas" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      Artistas
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/nosotros" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      Nosotros
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
 
-        <div className="flex items-center gap-4">
-          <Button asChild variant="default">
-            <Link href="/contacto">Contacto</Link>
-          </Button>
-        </div>
+            <div className="flex items-center gap-4">
+              {/* Aquí también implementamos el ThemeToggle */}
+              <ThemeToggle />
+              <Button asChild variant="default">
+                <Link href="/contacto">Contacto</Link>
+              </Button>
+            </div>
+          </>
+        )}
       </div>
     </header>
-  )
+  );
 }
 
 const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<"a">>(
@@ -177,28 +238,31 @@ const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWit
             ref={ref}
             className={cn(
               "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-              className,
+              className
             )}
             {...props}
           >
             <div className="text-sm font-medium leading-none">{title}</div>
-            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">{children}</p>
+            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+              {children}
+            </p>
           </a>
         </NavigationMenuLink>
       </li>
-    )
-  },
-)
-ListItem.displayName = "ListItem"
+    );
+  }
+);
+
+ListItem.displayName = "ListItem";
 
 function MobileAccordion({
   title,
   items,
 }: {
-  title: string
-  items: { title: string; href: string; description: string }[]
+  title: string;
+  items: { title: string; href: string; description: string }[];
 }) {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="border rounded-md">
@@ -212,12 +276,16 @@ function MobileAccordion({
       {isOpen && (
         <div className="px-4 py-2 space-y-2">
           {items.map((item) => (
-            <Link key={item.href} href={item.href} className="block px-2 py-1 text-sm rounded-md hover:bg-muted">
+            <Link
+              key={item.href}
+              href={item.href}
+              className="block px-2 py-1 rounded-md hover:bg-muted"
+            >
               {item.title}
             </Link>
           ))}
         </div>
       )}
     </div>
-  )
+  );
 }

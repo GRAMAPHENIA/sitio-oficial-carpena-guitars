@@ -14,7 +14,6 @@ export const metadata: Metadata = {
     "Fabricantes de guitarras y bajos personalizados de alta calidad. Modelos Fenix, Det Guitar, Valkiria, Divell, JDA, Explosion y Stinker.",
   keywords:
     "guitarras personalizadas, bajos personalizados, guitarras de 7 cuerdas, guitarras de 8 cuerdas, bajos de 5 cuerdas, luthier",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
