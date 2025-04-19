@@ -13,6 +13,14 @@ type Props = {
   }
 }
 
+export async function generateStaticParams() {
+  const models = ["jda", "explosion", "stinker"]
+
+  return models.map((model) => ({
+    model,
+  }))
+}
+
 export function generateMetadata({ params }: Props): Metadata {
   const modelName = getModelName(params.model)
 
