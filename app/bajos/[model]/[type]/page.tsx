@@ -25,12 +25,12 @@ type Props = {
 // ———————————————————————————————————————
 // STATIC PARAMS
 // ———————————————————————————————————————
-export async function generateStaticParams() {
+export async function generateStaticParams() { 
   const seen = new Set();
   const params = featuredGuitars
     .map((bass) => {
       const parts = bass.href.split("/");
-      console.log(`Processing href: ${bass.href}`); // Depuración
+      // console.log(`Processing href: ${bass.href}`);
       if (parts.length >= 4) {
         const model = parts[parts.length - 2];
         const type = parts[parts.length - 1];
@@ -44,7 +44,7 @@ export async function generateStaticParams() {
     })
     .filter(Boolean);
 
-  console.log("Generated params:", params); // Depuración
+  // console.log("Generated params:", params); 
   return params;
 }
 

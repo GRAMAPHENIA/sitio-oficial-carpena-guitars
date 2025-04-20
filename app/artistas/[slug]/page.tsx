@@ -1,10 +1,10 @@
-import type { Metadata } from "next"
-import Image from "next/image"
-import Link from "next/link"
-import { notFound } from "next/navigation"
-import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   ChevronRight,
   Instagram,
@@ -15,48 +15,55 @@ import {
   Music,
   User,
   GuitarIcon,
-} from "lucide-react"
-import { featuredArtists } from "@/data/artists"
-import { featuredGuitars } from "@/data/guitars"
+} from "lucide-react";
+import { featuredArtists } from "@/data/artists";
+import { featuredGuitars } from "@/data/guitars";
 
 type Props = {
   params: {
-    slug: string
-  }
+    slug: string;
+  };
+};
+
+// Implementación de generateStaticParams
+export async function generateStaticParams() {
+  return featuredArtists.map((artist) => ({
+    slug: artist.slug,
+  }));
 }
 
 export function generateMetadata({ params }: Props): Metadata {
-  const artist = getArtist(params.slug)
+  const artist = getArtist(params.slug);
 
   if (!artist) {
     return {
       title: "Artista no encontrado",
       description: "El artista que estás buscando no existe o ha sido eliminado.",
-    }
+    };
   }
 
   return {
     title: `${artist.name} | ${artist.band}`,
     description: artist.bio,
-  }
+  };
 }
 
 export default function ArtistDetailPage({ params }: Props) {
-  const artist = getArtist(params.slug)
+  const artist = getArtist(params.slug);
 
   if (!artist) {
-    notFound()
+    notFound();
   }
 
   // Obtener artistas relacionados (diferentes artistas)
-  const relatedArtists = featuredArtists.filter((a) => a.id !== artist.id).slice(0, 3)
+  const relatedArtists = featuredArtists.filter((a) => a.id !== artist.id).slice(0, 3);
 
   // Obtener instrumentos del artista
   const artistInstruments = artist.instruments.map((instrumentName) => {
     // Buscar el instrumento en featuredGuitars que coincida con el nombre
-    const instrument = featuredGuitars.find((g) => g.name === instrumentName)
-    return instrument || { name: instrumentName, href: "#", image: "/placeholder.svg" }
-  })
+    const instrument = featuredGuitars.find((g) => g.name === instrumentName);
+    return instrument || { name: instrumentName, href: "#", image: "/placeholder.svg" };
+  });
 
   return (
     <div className="container mx-auto py-12 px-4 md:px-6">
@@ -489,9 +496,9 @@ export default function ArtistDetailPage({ params }: Props) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 function getArtist(slug: string) {
-  return featuredArtists.find((artist) => artist.slug === slug)
+  return featuredArtists.find((artist) => artist.slug === slug);
 }
