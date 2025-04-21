@@ -38,7 +38,7 @@ export default function FAQPage() {
         <div className="mt-12 p-6 bg-muted rounded-lg text-center">
           <h3 className="text-xl font-bold mb-3">¿Necesitas más ayuda?</h3>
           <p className="text-muted-foreground mb-4">
-            Si no encuentras lo que buscas, contáctanos directamente.
+            Si no encontras lo que buscas, contáctanos directamente.
           </p>
           <Button asChild>
             <Link href="/contacto">Contactar al soporte</Link>

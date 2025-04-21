@@ -41,7 +41,7 @@ export default function ArtistasPage() {
                 ))}
               </div>
 
-              <div className="flex justify-between items-center">
+              {/* <div className="flex justify-between items-center">
                 <Link href={`/artistas/${artist.slug}`} className="text-primary font-medium hover:underline">
                   Ver perfil completo
                 </Link>
@@ -91,7 +91,7 @@ export default function ArtistasPage() {
                     </Link>
                   )}
                 </div>
-              </div>
+              </div> */}
             </CardContent>
           </Card>
         ))}

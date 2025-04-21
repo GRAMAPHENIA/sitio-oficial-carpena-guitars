@@ -25,21 +25,21 @@ export default function TerminosPage() {
 
         <div className="prose max-w-none">
           <p>
-            Bienvenido a GuitarBrand. Estos términos y condiciones describen las reglas y regulaciones para el uso del
-            sitio web de GuitarBrand.
+            Bienvenido a Carpena Guitars. Estos términos y condiciones describen las reglas y regulaciones para el uso del
+            sitio web de Carpena Guitars.
           </p>
 
           <p>
             Al acceder a este sitio web, asumimos que aceptas estos términos y condiciones en su totalidad. No continúes
-            usando el sitio web de GuitarBrand si no aceptas todos los términos y condiciones establecidos en esta
+            usando el sitio web de Carpena Guitars si no aceptas todos los términos y condiciones establecidos en esta
             página.
           </p>
 
           <h2>Licencia</h2>
 
           <p>
-            A menos que se indique lo contrario, GuitarBrand y/o sus licenciantes poseen los derechos de propiedad
-            intelectual de todo el material en GuitarBrand. Todos los derechos de propiedad intelectual están
+            A menos que se indique lo contrario, Carpena Guitars y/o sus licenciantes poseen los derechos de propiedad
+            intelectual de todo el material en Carpena Guitars. Todos los derechos de propiedad intelectual están
             reservados. Puedes ver y/o imprimir páginas desde nuestro sitio web para tu uso personal sujeto a las
             restricciones establecidas en estos términos y condiciones.
           </p>
@@ -51,7 +51,7 @@ export default function TerminosPage() {
             <li>Vender, alquilar o sublicenciar material de nuestro sitio web</li>
             <li>Reproducir, duplicar o copiar material de nuestro sitio web</li>
             <li>
-              Redistribuir contenido de GuitarBrand (a menos que el contenido esté específicamente hecho para
+              Redistribuir contenido de Carpena Guitars (a menos que el contenido esté específicamente hecho para
               redistribución)
             </li>
           </ul>
@@ -60,20 +60,20 @@ export default function TerminosPage() {
 
           <p>
             Ciertas partes de este sitio web ofrecen la oportunidad a los usuarios de publicar e intercambiar opiniones
-            e información en determinadas áreas. GuitarBrand no filtra, edita, publica o revisa los comentarios antes de
-            su presencia en el sitio web. Los comentarios no reflejan los puntos de vista y opiniones de GuitarBrand,
+            e información en determinadas áreas. Carpena Guitars no filtra, edita, publica o revisa los comentarios antes de
+            su presencia en el sitio web. Los comentarios no reflejan los puntos de vista y opiniones de Carpena Guitars,
             sus agentes y/o afiliados. Los comentarios reflejan los puntos de vista y opiniones de la persona que
             publica sus puntos de vista y opiniones.
           </p>
 
           <p>
-            En la medida permitida por las leyes aplicables, GuitarBrand no será responsable por los comentarios o por
+            En la medida permitida por las leyes aplicables, Carpena Guitars no será responsable por los comentarios o por
             cualquier responsabilidad, daños o gastos causados y/o sufridos como resultado de cualquier uso y/o
             publicación y/o aparición de los comentarios en este sitio web.
           </p>
 
           <p>
-            GuitarBrand se reserva el derecho de monitorear todos los comentarios y eliminar cualquier comentario que
+            Carpena Guitars se reserva el derecho de monitorear todos los comentarios y eliminar cualquier comentario que
             pueda considerarse inapropiado, ofensivo o que infrinja estos Términos y Condiciones.
           </p>
 
@@ -107,7 +107,7 @@ export default function TerminosPage() {
           </p>
 
           <p>
-            GuitarBrand no será responsable por retrasos en la entrega causados por circunstancias fuera de nuestro
+            Carpena Guitars no será responsable por retrasos en la entrega causados por circunstancias fuera de nuestro
             control razonable, incluyendo, pero no limitado a, desastres naturales, problemas con proveedores o
             transportistas, o cambios solicitados por el cliente durante el proceso de fabricación.
           </p>
@@ -220,7 +220,7 @@ export default function TerminosPage() {
           <p>Si tienes alguna pregunta sobre estos Términos y Condiciones, contáctanos:</p>
 
           <p>
-            Email: info@guitarbrand.com
+            Email: info@Carpena Guitars.com
             <br />
             Teléfono: +54 11 1234 5678
           </p>
