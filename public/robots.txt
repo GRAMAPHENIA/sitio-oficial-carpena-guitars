@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://carpena.hexagono.xyz/sitemap.xml
