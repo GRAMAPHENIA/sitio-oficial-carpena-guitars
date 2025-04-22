@@ -24,7 +24,7 @@ export default function NosotrosPage() {
           <Image src="/placeholder.svg?height=800&width=600" alt="Nuestro taller" fill className="object-cover" />
         </div>
         <div>
-          <h2 className="text-3xl font-bold mb-6">Nuestros Inicios</h2>
+          <h2 className="text-3xl font-bold mb-6">En Los Inicios</h2>
           <p className="text-lg text-muted-foreground mb-4">
             Todo comenzó en un pequeño taller en Buenos Aires, con la pasión de un luthier por crear instrumentos que
             combinaran la artesanía tradicional con innovaciones modernas. Lo que empezó como un proyecto personal
@@ -44,7 +44,7 @@ export default function NosotrosPage() {
 
       <div className="bg-muted rounded-lg p-8 md:p-12 mb-16">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold mb-4">Nuestra Filosofía</h2>
+          <h2 className="text-3xl font-bold mb-4">La Filosofía</h2>
           <p className="text-lg max-w-3xl mx-auto">
             Creemos que cada instrumento debe ser una extensión del músico que lo toca
           </p>
@@ -55,7 +55,7 @@ export default function NosotrosPage() {
             <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
               <span className="text-primary text-xl font-bold">1</span>
             </div>
-            <h3 className="text-xl font-bold mb-2">Calidad sin Compromiso</h3>
+            <h3 className="text-xl font-bold mb-2">Calidad y Compromiso</h3>
             <p className="text-muted-foreground">
               Utilizamos solo las mejores maderas y componentes, seleccionados cuidadosamente para garantizar
               instrumentos de la más alta calidad.
@@ -88,7 +88,7 @@ export default function NosotrosPage() {
 
       <div className="mb-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Nuestro Proceso</h2>
+          <h2 className="text-3xl font-bold mb-4">Los Procesos</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Cada instrumento que creamos pasa por un meticuloso proceso artesanal
           </p>
@@ -217,11 +217,10 @@ export default function NosotrosPage() {
                 className="object-cover"
               />
             </div>
-            <h3 className="text-xl font-bold mb-1">Carlos Rodríguez</h3>
-            <p className="text-muted-foreground mb-2">Fundador y Luthier Principal</p>
+            <h3 className="text-xl font-bold mb-1">Nombre Completo</h3>
+            <p className="text-muted-foreground mb-2">Especialidad, area, titulos, etc...</p>
             <p className="text-sm">
-              Con más de 20 años de experiencia en la construcción de instrumentos, Carlos es el visionario detrás de
-              nuestros diseños innovadores.
+             Experiencia de vida, logros y contribuciones, etc... 
             </p>
           </div>
 
@@ -234,11 +233,10 @@ export default function NosotrosPage() {
                 className="object-cover"
               />
             </div>
-            <h3 className="text-xl font-bold mb-1">Laura Méndez</h3>
-            <p className="text-muted-foreground mb-2">Luthier Especialista en Acabados</p>
+            <h3 className="text-xl font-bold mb-1">Nombre Completo</h3>
+            <p className="text-muted-foreground mb-2">Especialidad, area, titulos, etc...</p>
             <p className="text-sm">
-              Laura es reconocida por su meticuloso trabajo en acabados y su ojo para el detalle, creando instrumentos
-              visualmente impresionantes.
+             Experiencia de vida, logros y contribuciones, etc... 
             </p>
           </div>
 
@@ -251,11 +249,10 @@ export default function NosotrosPage() {
                 className="object-cover"
               />
             </div>
-            <h3 className="text-xl font-bold mb-1">Martín Gómez</h3>
-            <p className="text-muted-foreground mb-2">Ingeniero de Sonido</p>
+            <h3 className="text-xl font-bold mb-1">Nombre Completo</h3>
+            <p className="text-muted-foreground mb-2">Especialidad, area, titulos, etc...</p>
             <p className="text-sm">
-              Martín aporta su experiencia como ingeniero de sonido y músico profesional para optimizar el sonido de
-              cada instrumento que creamos.
+             Experiencia de vida, logros y contribuciones, etc... 
             </p>
           </div>
         </div>

@@ -11,11 +11,11 @@ export default function Footer() {
           <div className="space-y-4">
             <Link href="/" className="flex items-center space-x-2">
               {/* <Guitar className="h-6 w-6" /> */}
-              <span className="font-bold text-xl">Carpedna Guitars</span>
+              <span className="font-bold text-xl">Carpena Guitars</span>
             </Link>
             <p className="text-muted-foreground">
-              Fabricantes de guitarras y bajos personalizados de alta calidad
-              desde.
+              Fabricantes de guitarras y bajos personalizados, de alta calidad,
+              desde
             </p>
             <div className="flex space-x-4">
               <Link
