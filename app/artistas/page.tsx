@@ -100,13 +100,12 @@ export default function ArtistasPage() {
       <section className="mt-24 bg-muted rounded-lg p-8 md:p-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
-            <h2 className="text-3xl font-bold mb-4">¿Eres un Artista?</h2>
+            <h2 className="text-3xl font-bold mb-4">¿Sos un Artista?</h2>
             <p className="text-lg mb-6">
-              Si eres un músico profesional y estás interesado en nuestros instrumentos, nos encantaría hablar contigo.
-              Ofrecemos programas de endorsement para artistas que comparten nuestra pasión por la música y la calidad.
+              Si sos un músico profesional y estás interesado en nuestros instrumentos, no dudes en contactarnos. Nos encantaría saber de vos.
             </p>
             <Button asChild size="lg">
-              <Link href="/contacto">Contactar para Endorsement</Link>
+              <Link href="/contacto">Contactános</Link>
             </Button>
           </div>
           <div className="relative h-[300px] rounded-lg overflow-hidden">

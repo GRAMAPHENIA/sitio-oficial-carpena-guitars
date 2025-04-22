@@ -27,7 +27,7 @@ export default function FeaturedArtists() {
                 <p className="text-muted-foreground mb-3">{artist.band}</p>
                 <p className="mb-4 line-clamp-3">{artist.bio}</p>
                 <div className="flex justify-between items-center">
-                  <Link
+                  {/* <Link
                     href={`/artistas/${artist.slug}`}
                     className="text-primary font-medium hover:underline flex items-center"
                   >
@@ -42,7 +42,7 @@ export default function FeaturedArtists() {
                     >
                       <ExternalLink className="h-4 w-4 mr-1" /> Web
                     </Link>
-                  )}
+                  )} */}
                 </div>
               </CardContent>
             </Card>
