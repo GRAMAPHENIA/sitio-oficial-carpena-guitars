@@ -1,25 +1,4 @@
-export interface Guitar {
-  id: string;
-  name: string;
-  category: string;
-  description: string;
-  image: string;
-  price: string;
-  strings: string;
-  isNew?: boolean;
-  href: string;
-  features?: string[];
-  specs?: {
-    body: string;
-    neck: string;
-    fretboard: string;
-    frets: number;
-    pickups: string;
-    bridge: string;
-    hardware: string;
-    finish: string;
-  };
-}
+import type { Guitar } from "./types"
 
 export const featuredGuitars: Guitar[] = [
   {
@@ -33,12 +12,7 @@ export const featuredGuitars: Guitar[] = [
     strings: "6",
     isNew: true,
     href: "/guitarras/fenix/6-cuerdas",
-    features: [
-      "Construcción neck-through",
-      "Pastillas de alta ganancia",
-      "Hardware premium",
-      "Acabado personalizable",
-    ],
+    features: ["Construcción neck-through", "Pastillas de alta ganancia", "Hardware premium", "Acabado personalizable"],
     specs: {
       body: "Caoba con tapa de arce flameado",
       neck: "Arce/Caoba 5 piezas",
@@ -47,6 +21,87 @@ export const featuredGuitars: Guitar[] = [
       pickups: "Humbucker/Humbucker",
       bridge: "Floyd Rose Original",
       hardware: "Negro",
+      finish: "Satinado",
+    },
+  },
+  {
+    id: "fenix-7-custom",
+    name: "Fenix 7 Custom",
+    category: "Guitarras Fenix",
+    description:
+      "Versión de 7 cuerdas de nuestra guitarra insignia, con un rango extendido para estilos más pesados y técnicos.",
+    image: "/placeholder.svg?height=600&width=400",
+    price: "Consultar",
+    strings: "7",
+    href: "/guitarras/fenix/7-cuerdas",
+    features: [
+      "Construcción neck-through para máximo sustain",
+      "Pastillas de alta ganancia diseñadas para 7 cuerdas",
+      "Hardware premium de alta precisión",
+      "Diapasón con radio compuesto para mayor comodidad",
+    ],
+    specs: {
+      body: "Caoba con tapa de arce flameado",
+      neck: "Arce/Wenge 5 piezas",
+      fretboard: "Ébano",
+      frets: 24,
+      pickups: "Humbucker/Humbucker de alta definición",
+      bridge: "Floyd Rose 1000 Series 7 cuerdas",
+      hardware: "Negro",
+      finish: "Satinado",
+    },
+  },
+  {
+    id: "fenix-8-custom",
+    name: "Fenix 8 Custom",
+    category: "Guitarras Fenix",
+    description:
+      "Nuestra guitarra de 8 cuerdas más avanzada, diseñada para músicos que buscan explorar nuevos territorios sonoros.",
+    image: "/placeholder.svg?height=600&width=400",
+    price: "Consultar",
+    strings: "8",
+    isNew: true,
+    href: "/guitarras/fenix/8-cuerdas",
+    features: [
+      "Escala extendida para mejor tensión en cuerdas graves",
+      "Pastillas de alta definición diseñadas para 8 cuerdas",
+      "Construcción neck-through para máximo sustain",
+      "Diapasón con radio compuesto para mayor comodidad",
+    ],
+    specs: {
+      body: "Caoba con tapa de arce flameado",
+      neck: "Arce/Wenge 7 piezas",
+      fretboard: "Ébano",
+      frets: 24,
+      pickups: "Humbucker/Humbucker activos de alta definición",
+      bridge: "Hipshot 8 cuerdas",
+      hardware: "Negro",
+      finish: "Satinado",
+    },
+  },
+  {
+    id: "det-guitar-6",
+    name: "Det Guitar 6",
+    category: "Guitarras Det",
+    description: "Guitarra de 6 cuerdas con un diseño ergonómico y un sonido potente y definido para diversos estilos.",
+    image: "/placeholder.svg?height=600&width=400",
+    price: "Consultar",
+    strings: "6",
+    href: "/guitarras/det-guitar/6-cuerdas",
+    features: [
+      "Diseño ergonómico para mayor comodidad",
+      "Pastillas de alta definición",
+      "Construcción set-neck",
+      "Diapasón con radio compuesto",
+    ],
+    specs: {
+      body: "Aliso",
+      neck: "Arce",
+      fretboard: "Palisandro",
+      frets: 24,
+      pickups: "Humbucker/Humbucker",
+      bridge: "Tune-o-matic",
+      hardware: "Cromado",
       finish: "Satinado",
     },
   },
@@ -66,105 +121,206 @@ export const featuredGuitars: Guitar[] = [
       "Construcción set-neck",
       "Diapasón con radio compuesto",
     ],
+    specs: {
+      body: "Aliso",
+      neck: "Arce",
+      fretboard: "Ébano",
+      frets: 24,
+      pickups: "Humbucker/Humbucker de alta ganancia",
+      bridge: "Hipshot 7 cuerdas",
+      hardware: "Negro",
+      finish: "Satinado",
+    },
+  },
+  {
+    id: "det-guitar-8",
+    name: "Det Guitar 8",
+    category: "Guitarras Det",
+    description:
+      "Guitarra de 8 cuerdas con un diseño ergonómico y un sonido potente y definido para los estilos más técnicos y experimentales.",
+    image: "/placeholder.svg?height=600&width=400",
+    price: "Consultar",
+    strings: "8",
+    isNew: true,
+    href: "/guitarras/det-guitar/8-cuerdas",
+    features: [
+      "Escala extendida para mejor tensión en cuerdas graves",
+      "Pastillas de alta definición diseñadas para 8 cuerdas",
+      "Construcción set-neck para mayor estabilidad",
+      "Diapasón con radio compuesto para mayor comodidad",
+    ],
+    specs: {
+      body: "Aliso con tapa de arce flameado",
+      neck: "Arce/Wenge 5 piezas",
+      fretboard: "Ébano",
+      frets: 24,
+      pickups: "Humbucker/Humbucker activos de alta definición",
+      bridge: "Hipshot 8 cuerdas",
+      hardware: "Negro",
+      finish: "Satinado",
+    },
   },
   {
     id: "valkiria-6",
     name: "Valkiria 6",
     category: "Guitarras Valkiria",
-    description:
-      "Elegancia y potencia en un diseño único. Perfecta para géneros que requieren claridad y punch.",
+    description: "Elegancia y potencia en un diseño único. Perfecta para géneros que requieren claridad y punch.",
     image: "/placeholder.svg?height=600&width=400",
     price: "Consultar",
     strings: "6",
     href: "/guitarras/valkiria/6-cuerdas",
+    features: [
+      "Diseño elegante con líneas clásicas",
+      "Equilibrio tonal perfecto para diversos estilos",
+      "Construcción de alta precisión",
+      "Acabados de lujo con atención al detalle",
+    ],
+    specs: {
+      body: "Caoba",
+      neck: "Caoba",
+      fretboard: "Palisandro",
+      frets: 22,
+      pickups: "Humbucker/Humbucker",
+      bridge: "Tune-o-matic",
+      hardware: "Dorado",
+      finish: "Brillante",
+    },
+  },
+  {
+    id: "valkiria-7",
+    name: "Valkiria 7",
+    category: "Guitarras Valkiria",
+    description:
+      "Versión de 7 cuerdas con un rango extendido manteniendo la elegancia característica de la serie Valkiria.",
+    image: "/placeholder.svg?height=600&width=400",
+    price: "Consultar",
+    strings: "7",
+    href: "/guitarras/valkiria/7-cuerdas",
+    features: [
+      "Diseño elegante con líneas clásicas",
+      "Equilibrio tonal perfecto para diversos estilos",
+      "Construcción de alta precisión",
+      "Acabados de lujo con atención al detalle",
+    ],
+    specs: {
+      body: "Caoba",
+      neck: "Caoba",
+      fretboard: "Ébano",
+      frets: 24,
+      pickups: "Humbucker/Humbucker de alta ganancia",
+      bridge: "Tune-o-matic 7 cuerdas",
+      hardware: "Dorado",
+      finish: "Brillante",
+    },
+  },
+  {
+    id: "divell-6",
+    name: "Divell 6",
+    category: "Guitarras Divell",
+    description: "Diseño agresivo con un sonido contundente. Perfecta para metal y géneros extremos.",
+    image: "/placeholder.svg?height=600&width=400",
+    price: "Consultar",
+    strings: "6",
+    href: "/guitarras/divell/6-cuerdas",
+    features: [
+      "Diseño agresivo para estilos extremos",
+      "Pastillas de alta ganancia para sonidos contundentes",
+      "Construcción robusta para mayor estabilidad",
+      "Diapasón plano para técnicas rápidas",
+    ],
+    specs: {
+      body: "Caoba",
+      neck: "Arce",
+      fretboard: "Ébano",
+      frets: 24,
+      pickups: "Humbucker/Humbucker activos",
+      bridge: "Floyd Rose",
+      hardware: "Negro",
+      finish: "Satinado",
+    },
   },
   {
     id: "divell-7",
     name: "Divell 7",
     category: "Guitarras Divell",
-    description:
-      "Diseño agresivo con un sonido contundente. La elección perfecta para metal y géneros extremos.",
+    description: "Diseño agresivo con un sonido contundente. La elección perfecta para metal y géneros extremos.",
     image: "/placeholder.svg?height=600&width=400",
     price: "Consultar",
     strings: "7",
     href: "/guitarras/divell/7-cuerdas",
+    features: [
+      "Diseño agresivo para estilos extremos",
+      "Pastillas de alta ganancia para sonidos contundentes",
+      "Construcción robusta para mayor estabilidad",
+      "Diapasón plano para técnicas rápidas",
+    ],
+    specs: {
+      body: "Caoba",
+      neck: "Arce/Wenge",
+      fretboard: "Ébano",
+      frets: 24,
+      pickups: "Humbucker/Humbucker activos",
+      bridge: "Floyd Rose 7 cuerdas",
+      hardware: "Negro",
+      finish: "Satinado",
+    },
   },
   {
-    id: "explosion-4", // Nuevo elemento agregado
-    name: "Explosion 4",
-    category: "Bajos Explosion",
-    description:
-      "Bajo de 4 cuerdas con un sonido explosivo y una definición excepcional en todas las frecuencias.",
+    id: "divell-8",
+    name: "Divell 8",
+    category: "Guitarras Divell",
+    description: "Versión de 8 cuerdas con un diseño aún más agresivo para los estilos más extremos y experimentales.",
     image: "/placeholder.svg?height=600&width=400",
     price: "Consultar",
-    strings: "4",
-    href: "/bajos/explosion/4-cuerdas",
+    strings: "8",
+    isNew: true,
+    href: "/guitarras/divell/8-cuerdas",
+    features: [
+      "Diseño agresivo para estilos extremos",
+      "Pastillas de alta ganancia diseñadas para 8 cuerdas",
+      "Construcción robusta para mayor estabilidad",
+      "Diapasón plano para técnicas rápidas",
+    ],
+    specs: {
+      body: "Caoba con tapa de arce flameado",
+      neck: "Arce/Wenge 5 piezas",
+      fretboard: "Ébano",
+      frets: 24,
+      pickups: "Humbucker/Humbucker activos de alta definición",
+      bridge: "Hipshot 8 cuerdas",
+      hardware: "Negro",
+      finish: "Satinado",
+    },
   },
+  // Bajos incluidos para mantener compatibilidad con código existente
   {
     id: "explosion-5",
     name: "Explosion 5",
     category: "Bajos Explosion",
-    description:
-      "Bajo de 5 cuerdas con un sonido explosivo y una definición excepcional en todas las frecuencias.",
+    description: "Bajo de 5 cuerdas con un sonido explosivo y una definición excepcional en todas las frecuencias.",
     image: "/placeholder.svg?height=600&width=400",
     price: "Consultar",
     strings: "5",
     href: "/bajos/explosion/5-cuerdas",
   },
   {
-    id: "explosion-6", // Nuevo elemento agregado
-    name: "Explosion 6",
-    category: "Bajos Explosion",
-    description:
-      "Bajo de 6 cuerdas con un sonido explosivo y una definición excepcional en todas las frecuencias.",
-    image: "/placeholder.svg?height=600&width=400",
-    price: "Consultar",
-    strings: "6",
-    href: "/bajos/explosion/6-cuerdas",
-  },
-  {
     id: "jda-4",
     name: "JDA 4",
     category: "Bajos JDA",
-    description:
-      "Bajo de 4 cuerdas con un sonido clásico y versátil, perfecto para cualquier estilo musical.",
+    description: "Bajo de 4 cuerdas con un sonido clásico y versátil, perfecto para cualquier estilo musical.",
     image: "/placeholder.svg?height=600&width=400",
     price: "Consultar",
     strings: "4",
     href: "/bajos/jda/4-cuerdas",
   },
   {
-    id: "jda-5",
-    name: "JDA 5",
-    category: "Bajos JDA",
-    description:
-      "Bajo de 5 cuerdas con un sonido moderno y versátil.",
-    image: "/placeholder.svg?height=600&width=400",
-    price: "Consultar",
-    strings: "5",
-    href: "/bajos/jda/5-cuerdas",
-  },
-  {
     id: "stinker-5",
     name: "Stinker 5",
     category: "Bajos Stinker",
-    description:
-      "Bajo de 5 cuerdas con un diseño moderno y un sonido potente y definido.",
+    description: "Bajo de 5 cuerdas con un diseño moderno y un sonido potente y definido.",
     image: "/placeholder.svg?height=600&width=400",
     price: "Consultar",
     strings: "5",
     href: "/bajos/stinker/5-cuerdas",
   },
-  {
-    id: "fenix-8-custom",
-    name: "Fenix 8 Custom",
-    category: "Guitarras Fenix",
-    description:
-      "Nuestra guitarra de 8 cuerdas más avanzada, diseñada para músicos que buscan explorar nuevos territorios sonoros.",
-    image: "/placeholder.svg?height=600&width=400",
-    price: "Consultar",
-    strings: "8",
-    isNew: true,
-    href: "/guitarras/fenix/8-cuerdas",
-  },
-];
+]

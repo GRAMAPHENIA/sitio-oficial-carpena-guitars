@@ -5,7 +5,7 @@ import { notFound } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ChevronRight, ArrowRight } from "lucide-react"
-import { featuredGuitars } from "@/data/guitars"
+import { featuredBasses } from "@/data/basses"
 
 type Props = {
   params: {
@@ -13,12 +13,17 @@ type Props = {
   }
 }
 
+// Función para generar rutas estáticas
 export async function generateStaticParams() {
-  const models = ["jda", "explosion", "stinker"]
+  // Obtener modelos únicos de bajos
+  const models = [...new Set(featuredBasses.map((bass) => bass.href.split("/")[2]))]
 
-  return models.map((model) => ({
+  // Crear un array de objetos con los parámetros para cada ruta
+  const paths = models.map((model) => ({
     model,
   }))
+
+  return paths
 }
 
 export function generateMetadata({ params }: Props): Metadata {
@@ -41,11 +46,43 @@ export default function BassModelPage({ params }: Props) {
   const modelName = getModelName(params.model)
 
   if (!modelName) {
-    notFound()
+    return (
+      <div className="container mx-auto py-16 px-4 md:px-6 text-center">
+        <h1 className="text-3xl md:text-4xl font-bold mb-6">Modelo no encontrado</h1>
+        <p className="text-lg text-muted-foreground mb-8">
+          Lo sentimos, el modelo de bajo que estás buscando no existe o ha sido descontinuado.
+        </p>
+        <div className="mb-12">
+          <h2 className="text-xl font-medium mb-4">¿Qué puedes hacer ahora?</h2>
+          <ul className="space-y-2 max-w-md mx-auto text-left">
+            <li className="flex items-start gap-2">
+              <div className="h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <ChevronRight className="h-3 w-3 text-primary" />
+              </div>
+              <span>Explorar nuestra colección completa de bajos</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <div className="h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <ChevronRight className="h-3 w-3 text-primary" />
+              </div>
+              <span>Contactar con nosotros para consultar sobre modelos personalizados</span>
+            </li>
+          </ul>
+        </div>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button asChild size="lg">
+            <Link href="/bajos">Ver todos los bajos</Link>
+          </Button>
+          <Button asChild variant="outline" size="lg">
+            <Link href="/contacto">Contactar</Link>
+          </Button>
+        </div>
+      </div>
+    )
   }
 
   // Obtener bajos del modelo
-  const modelBasses = featuredGuitars.filter((bass) => bass.href.includes(`/bajos/${params.model}`))
+  const modelBasses = featuredBasses.filter((bass) => bass.href.includes(`/bajos/${params.model}`))
 
   if (modelBasses.length === 0) {
     notFound()
