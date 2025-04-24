@@ -208,10 +208,10 @@ export default function GuitarDetailPage({ params }: Props) {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button asChild size="lg" className="flex-1">
+            <Button asChild size="lg" className="flex-1 py-2">
               <Link href="/contacto">Solicitar información</Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="flex-1">
+            <Button asChild variant="outline" size="lg" className="flex-1 py-2">
               <Link href="/contacto">Consultar disponibilidad</Link>
             </Button>
           </div>
@@ -222,7 +222,7 @@ export default function GuitarDetailPage({ params }: Props) {
         <TabsList className="grid w-full grid-cols-3 mb-8">
           <TabsTrigger value="specs" className="flex items-center gap-2">
             <Settings className="h-4 w-4" />
-            <span>Especificaciones</span>
+            <span>Datos</span>
           </TabsTrigger>
           <TabsTrigger value="details" className="flex items-center gap-2">
             <Info className="h-4 w-4" />
@@ -235,7 +235,7 @@ export default function GuitarDetailPage({ params }: Props) {
         </TabsList>
 
         <TabsContent value="specs" className="space-y-6">
-          <h2 className="text-2xl font-bold mb-4">Especificaciones técnicas</h2>
+          <h2 className="text-2xl font-bold mb-4">Datos técnicos</h2>
 
           {guitar.specs ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
