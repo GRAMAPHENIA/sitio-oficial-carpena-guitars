@@ -63,11 +63,11 @@ export default function Gallery() {
         <Dialog open={selectedImage !== null} onOpenChange={closeLightbox}>
           <DialogContent className="max-w-5xl p-0 bg-transparent border-none">
             <DialogTitle className="sr-only">Imagen en galería</DialogTitle>
-            <div className="relative bg-background rounded-lg overflow-hidden">
+            <div className="relative bg-background lg:rounded-lg overflow-hidden">
               <Button
                 variant="ghost"
                 size="icon"
-                className="absolute top-2 right-2 z-10 text-white bg-black/20 hover:bg-black/40"
+                className="absolute top-4 right-4 z-10 text-white bg-black/20 backdrop-blur-xl hover:bg-black/40"
                 onClick={closeLightbox}
               >
                 <X className="h-5 w-5" />

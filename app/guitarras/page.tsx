@@ -24,7 +24,8 @@ export default function GuitarrasPage() {
       </div>
 
       <Tabs defaultValue="all" className="w-full mb-12">
-        <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 mb-20 lg:mb-8 ">
+        <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 mb-14
+        lg:mb-8">
           <TabsTrigger value="all">Todas</TabsTrigger>
           <TabsTrigger value="fenix">Fenix</TabsTrigger>
           <TabsTrigger value="det-guitar">Det Guitar</TabsTrigger>
